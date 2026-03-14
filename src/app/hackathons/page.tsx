@@ -38,6 +38,36 @@ const ecosystemEvents = [
   { month: "Sep 24", year: "2026", title: "ETHGlobal Tokyo", location: "Tokyo", color: "from-emerald-500 to-green-400" },
 ];
 
+const latestHackathon = {
+  badge: "Latest recap",
+  title: "Agentic Commerce Vibeathon",
+  subtitle: "Autonomous agents that move capital across chains",
+  description:
+    "Builders shipped autonomous LI.FI-powered traders, treasury managers, and memecoin desks that run entirely on agent loops.",
+  date: "March 2026",
+  prize: "$5,000 prize pool",
+  theme: "Agentic commerce",
+  recapUrl: "https://lifi.notion.site/Agentic-Commerce-Vibeathon-Recap-Mar-2026-323b2092b81d818eba66e5180ceefd7f",
+  submissionsUrl: "https://docs.google.com/spreadsheets/d/1mPw6Xsdzxt9p9p6GDqahOOS9VqJbX6YB-6RKXejrx4A/edit?usp=sharing",
+  winners: [
+    {
+      name: "DISPATCH",
+      description:
+        "Narrative-trading agent that monitors CryptoPanic, caches LI.FI routes, and executes trades with automated stop-losses.",
+    },
+    {
+      name: "ATLAS",
+      description:
+        "OpenClaw-based treasury pilot where every swap and bridge routes through LI.FI with transparent risk guardrails.",
+    },
+    {
+      name: "Memevelli",
+      description:
+        "Three-character ElizaOS squad plus @elizaos/plugin-lifi so any agent can bridge, swap, or check balances instantly.",
+    },
+  ],
+};
+
 const pastHackathons = [
   {
     badge: "LI.FI Builders",
@@ -147,6 +177,58 @@ export default function HackathonsPage() {
         <p className="text-lg text-text-secondary max-w-[500px] mx-auto">
           Compete in hackathons, win prizes, and get fast-tracked into the Builders Accelerator Program.
         </p>
+      </section>
+
+      {/* Latest Hackathon Recap */}
+      <section className="py-16 px-6 bg-bg-card/20 border-y border-border">
+        <div className="max-w-[900px] mx-auto grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-wider text-pink">{latestHackathon.badge}</span>
+            <h2 className="text-3xl font-bold tracking-tight mt-3">{latestHackathon.title}</h2>
+            <p className="text-text-secondary text-[15px] leading-relaxed mt-4">{latestHackathon.subtitle}</p>
+            <p className="text-text-secondary text-[15px] leading-relaxed mt-3">{latestHackathon.description}</p>
+            <div className="flex flex-wrap gap-6 mt-6 text-sm text-text-secondary">
+              <div>
+                <span className="block font-semibold text-text-primary">{latestHackathon.date}</span>
+                <span>{latestHackathon.prize}</span>
+              </div>
+              <div>
+                <span className="block font-semibold text-text-primary">Theme</span>
+                <span>{latestHackathon.theme}</span>
+              </div>
+            </div>
+            <div className="flex gap-4 flex-col sm:flex-row mt-8">
+              <Button href={latestHackathon.recapUrl} external>
+                Read recap
+                <ExternalLinkIcon />
+              </Button>
+              <Button href={latestHackathon.submissionsUrl} variant="secondary" external>
+                Browse submissions
+                <ExternalLinkIcon />
+              </Button>
+            </div>
+          </div>
+          <div className="bg-bg-card border border-border rounded-xl p-6">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-wider text-text-secondary">Podium</span>
+                <h3 className="text-lg font-semibold text-text-primary">Top builders</h3>
+              </div>
+              <span className="text-sm font-mono text-text-secondary">#agentic</span>
+            </div>
+            <div className="flex flex-col gap-4">
+              {latestHackathon.winners.map((winner, i) => (
+                <div key={winner.name} className="flex items-start gap-4">
+                  <span className="font-mono text-xs font-semibold text-pink min-w-[32px] pt-0.5">#{i + 1}</span>
+                  <div>
+                    <h4 className="text-[15px] font-semibold text-text-primary mb-0.5">{winner.name}</h4>
+                    <p className="text-[13px] text-text-secondary">{winner.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Live Hackathon */}
