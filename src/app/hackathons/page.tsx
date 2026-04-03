@@ -38,24 +38,108 @@ const ecosystemEvents = [
   { month: "Sep 24", year: "2026", title: "ETHGlobal Tokyo", location: "Tokyo", color: "from-emerald-500 to-green-400" },
 ];
 
-const winners = [
+const latestHackathon = {
+  badge: "Latest recap",
+  title: "Agentic Commerce Vibeathon",
+  subtitle: "Autonomous agents that move capital across chains",
+  description:
+    "Builders shipped autonomous LI.FI-powered traders, treasury managers, and memecoin desks that run entirely on agent loops.",
+  date: "March 2026",
+  prize: "$5,000 prize pool",
+  theme: "Agentic commerce",
+  recapUrl: "https://lifi.notion.site/Agentic-Commerce-Vibeathon-Recap-Mar-2026-323b2092b81d818eba66e5180ceefd7f",
+  submissionsUrl: "https://docs.google.com/spreadsheets/d/1mPw6Xsdzxt9p9p6GDqahOOS9VqJbX6YB-6RKXejrx4A/edit?usp=sharing",
+  winners: [
+    {
+      name: "DISPATCH",
+      description:
+        "Narrative-trading agent that monitors CryptoPanic, caches LI.FI routes, and executes trades with automated stop-losses.",
+    },
+    {
+      name: "ATLAS",
+      description:
+        "OpenClaw-based treasury pilot where every swap and bridge routes through LI.FI with transparent risk guardrails.",
+    },
+    {
+      name: "Memevelli",
+      description:
+        "Three-character ElizaOS squad plus @elizaos/plugin-lifi so any agent can bridge, swap, or check balances instantly.",
+    },
+  ],
+};
+
+const pastHackathons = [
   {
-    place: "1st",
-    name: "Mina",
-    link: "https://usemina.co",
-    description: "Complete Hyperliquid onboarding platform with web app, SDK, and CLI. Uses LI.FI routing to bridge from 40+ EVM chains.",
+    badge: "LI.FI Builders",
+    title: "Agentic Commerce Vibeathon",
+    meta: "March 2026 · $5,000 prize pool · Agentic Commerce sprint",
+    recapUrl: "https://lifi.notion.site/Agentic-Commerce-Vibeathon-Recap-Mar-2026-323b2092b81d818eba66e5180ceefd7f",
+    winners: [
+      {
+        place: "1st",
+        name: "DISPATCH",
+        link: "https://github.com/harystyleseze/dispatch",
+        description:
+          "Narrative-trading agent that ingests CryptoPanic, scores conviction with Claude, caches LI.FI routes, and executes with automatic stop-losses.",
+      },
+      {
+        place: "2nd",
+        name: "ATLAS",
+        link: "https://github.com/Magicianhax/atlas-agent",
+        description:
+          "11-skill treasury operator that routes every swap and bridge through LI.FI while enforcing risk guardrails and streaming a live dashboard.",
+      },
+      {
+        place: "3rd",
+        name: "Memevelli",
+        link: "https://github.com/Bleyle823/Memevelli",
+        description:
+          "ElizaOS strategist/analyst/executor trio plus a reusable @elizaos/plugin-lifi so any character can bridge, swap, or check balances natively.",
+      },
+      {
+        place: "4th",
+        name: "Brahma",
+        link: "https://github.com/daiwikmh/brahma",
+        description:
+          "Guardian + Yielder brains that poll yields every 30 seconds, price LI.FI bridge costs, and lock execution whenever the math doesn’t clear.",
+      },
+      {
+        place: "5th",
+        name: "Caliper",
+        link: "https://github.com/Bigestdave/caliper-agent",
+        description:
+          "Headless treasury manager that refuses to move capital unless LI.FI quotes prove the yield delta repays bridge costs inside strict windows.",
+      },
+    ],
   },
   {
-    place: "2nd",
-    name: "HyperGate",
-    link: "https://hypergate-pi.vercel.app",
-    description: "Embeddable React widget for atomic one-click onboarding directly to Hyperliquid L1 trading accounts.",
-  },
-  {
-    place: "3rd",
-    name: "Delta0",
-    link: "https://www.delta0.xyz",
-    description: "Turn any asset into a stablecoin with on-chain cash-and-carry strategies on Hyperliquid.",
+    badge: "Encode Club",
+    title: "Hyperliquid Hackathon",
+    meta: "January 2026 · $6,500+ in prizes · 25+ submissions",
+    recapUrl: "https://li.fi/knowledge-hub/encodes-hyperliquid-hackathon-winners-january-2026/",
+    winners: [
+      {
+        place: "1st",
+        name: "Mina",
+        link: "https://usemina.co",
+        description:
+          "Complete Hyperliquid onboarding platform with web app, SDK, and CLI. Uses LI.FI routing to bridge from 40+ EVM chains.",
+      },
+      {
+        place: "2nd",
+        name: "HyperGate",
+        link: "https://hypergate-pi.vercel.app",
+        description:
+          "Embeddable React widget for atomic one-click onboarding directly to Hyperliquid L1 trading accounts.",
+      },
+      {
+        place: "3rd",
+        name: "Delta0",
+        link: "https://www.delta0.xyz",
+        description:
+          "Turn any asset into a stablecoin with on-chain cash-and-carry strategies on Hyperliquid.",
+      },
+    ],
   },
 ];
 
@@ -93,6 +177,58 @@ export default function HackathonsPage() {
         <p className="text-lg text-text-secondary max-w-[500px] mx-auto">
           Compete in hackathons, win prizes, and get fast-tracked into the Builders Accelerator Program.
         </p>
+      </section>
+
+      {/* Latest Hackathon Recap */}
+      <section className="py-16 px-6 bg-bg-card/20 border-y border-border">
+        <div className="max-w-[900px] mx-auto grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-wider text-pink">{latestHackathon.badge}</span>
+            <h2 className="text-3xl font-bold tracking-tight mt-3">{latestHackathon.title}</h2>
+            <p className="text-text-secondary text-[15px] leading-relaxed mt-4">{latestHackathon.subtitle}</p>
+            <p className="text-text-secondary text-[15px] leading-relaxed mt-3">{latestHackathon.description}</p>
+            <div className="flex flex-wrap gap-6 mt-6 text-sm text-text-secondary">
+              <div>
+                <span className="block font-semibold text-text-primary">{latestHackathon.date}</span>
+                <span>{latestHackathon.prize}</span>
+              </div>
+              <div>
+                <span className="block font-semibold text-text-primary">Theme</span>
+                <span>{latestHackathon.theme}</span>
+              </div>
+            </div>
+            <div className="flex gap-4 flex-col sm:flex-row mt-8">
+              <Button href={latestHackathon.recapUrl} external>
+                Read recap
+                <ExternalLinkIcon />
+              </Button>
+              <Button href={latestHackathon.submissionsUrl} variant="secondary" external>
+                Browse submissions
+                <ExternalLinkIcon />
+              </Button>
+            </div>
+          </div>
+          <div className="bg-bg-card border border-border rounded-xl p-6">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-wider text-text-secondary">Podium</span>
+                <h3 className="text-lg font-semibold text-text-primary">Top builders</h3>
+              </div>
+              <span className="text-sm font-mono text-text-secondary">#agentic</span>
+            </div>
+            <div className="flex flex-col gap-4">
+              {latestHackathon.winners.map((winner, i) => (
+                <div key={winner.name} className="flex items-start gap-4">
+                  <span className="font-mono text-xs font-semibold text-pink min-w-[32px] pt-0.5">#{i + 1}</span>
+                  <div>
+                    <h4 className="text-[15px] font-semibold text-text-primary mb-0.5">{winner.name}</h4>
+                    <p className="text-[13px] text-text-secondary">{winner.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Live Hackathon */}
@@ -213,40 +349,53 @@ export default function HackathonsPage() {
         <div className="max-w-[800px] mx-auto">
           <h2 className="text-2xl font-semibold mb-10">Past Winners</h2>
 
-          <div className="bg-bg-card border border-border rounded-xl p-8">
-            <div className="flex justify-between items-start mb-8 pb-6 border-b border-border flex-col sm:flex-row gap-4">
-              <div>
-                <span className="text-xs font-semibold uppercase tracking-wider text-pink">Encode Club</span>
-                <h3 className="text-lg font-semibold my-1">Hyperliquid Hackathon</h3>
-                <span className="text-[13px] text-text-secondary">January 2026 · $6,500+ in prizes · 25+ submissions</span>
-              </div>
-              <Link
-                href="https://li.fi/knowledge-hub/encodes-hyperliquid-hackathon-winners-january-2026/"
-                target="_blank"
-                className="inline-flex items-center gap-1 text-sm font-medium text-pink hover:opacity-80 transition-opacity"
-              >
-                Read recap
-                <ExternalLinkIcon />
-              </Link>
-            </div>
-
-            <div className="flex flex-col gap-4">
-              {winners.map((winner, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <span className="font-mono text-xs font-semibold text-text-secondary min-w-[28px] pt-0.5">
-                    {winner.place}
-                  </span>
+          <div className="flex flex-col gap-8">
+            {pastHackathons.map((hackathon) => (
+              <div key={hackathon.title} className="bg-bg-card border border-border rounded-xl p-8">
+                <div className="flex justify-between items-start mb-8 pb-6 border-b border-border flex-col sm:flex-row gap-4">
                   <div>
-                    <h4 className="text-[15px] font-semibold mb-0.5">
-                      <Link href={winner.link} target="_blank" className="text-text-primary hover:text-pink transition-colors">
-                        {winner.name}
-                      </Link>
-                    </h4>
-                    <p className="text-[13px] text-text-secondary">{winner.description}</p>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-pink">{hackathon.badge}</span>
+                    <h3 className="text-lg font-semibold my-1">{hackathon.title}</h3>
+                    <span className="text-[13px] text-text-secondary">{hackathon.meta}</span>
                   </div>
+                  {hackathon.recapUrl ? (
+                    <Link
+                      href={hackathon.recapUrl}
+                      target="_blank"
+                      className="inline-flex items-center gap-1 text-sm font-medium text-pink hover:opacity-80 transition-opacity"
+                    >
+                      Read recap
+                      <ExternalLinkIcon />
+                    </Link>
+                  ) : null}
                 </div>
-              ))}
-            </div>
+
+                <div className="flex flex-col gap-4">
+                  {hackathon.winners.map((winner) => (
+                    <div
+                      key={`${hackathon.title}-${winner.place}-${winner.name}`}
+                      className="flex items-start gap-4"
+                    >
+                      <span className="font-mono text-xs font-semibold text-text-secondary min-w-[28px] pt-0.5">
+                        {winner.place}
+                      </span>
+                      <div>
+                        <h4 className="text-[15px] font-semibold mb-0.5">
+                          <Link
+                            href={winner.link}
+                            target="_blank"
+                            className="text-text-primary hover:text-pink transition-colors"
+                          >
+                            {winner.name}
+                          </Link>
+                        </h4>
+                        <p className="text-[13px] text-text-secondary">{winner.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
