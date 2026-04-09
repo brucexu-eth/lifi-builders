@@ -189,6 +189,53 @@ export default function HackathonsPage() {
         </p>
       </section>
 
+      {/* Live Hackathon */}
+      <section className="py-12 px-6">
+        <div className="max-w-[800px] mx-auto">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-500 mb-8">
+            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse-slow" />
+            Live Now
+          </div>
+
+          <div className="mb-10">
+            <span className="text-sm text-text-secondary block mb-2">LI.FI</span>
+            <h2 className="text-3xl font-bold tracking-tight mb-1">DeFi Mullet Hackathon #1</h2>
+            <p className="text-text-secondary">Apr 8 — Apr 14, 2026</p>
+          </div>
+
+          <div className="flex items-baseline gap-4 py-6 border-t border-b border-border mb-10">
+            <span className="text-sm text-text-secondary">Total Prize Pool</span>
+            <span className="text-2xl font-bold text-text-primary">$5,000 USDC</span>
+          </div>
+
+          {/* Tracks */}
+          <div className="flex flex-col gap-8 mb-10">
+            {tracks.map((track, i) => (
+              <div key={i} className={`pb-8 ${i < tracks.length - 1 ? "border-b border-border" : ""}`}>
+                <div className="flex items-baseline gap-6 mb-2 flex-col sm:flex-row">
+                  <span className="font-mono text-sm font-semibold text-pink">{track.prize}</span>
+                  <h3 className="text-base font-semibold">{track.title}</h3>
+                </div>
+                <p className="text-[15px] text-text-secondary leading-relaxed sm:pl-[calc(3.5rem+1.5rem)] pl-0">
+                  {track.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex gap-4 flex-col sm:flex-row">
+            <Button href="https://forms.gle/RFLGG8RiEKC3AqnQA" external>
+              Register Now
+              <ExternalLinkIcon />
+            </Button>
+            <Button href="https://docs.li.fi/earn/overview" variant="secondary" external>
+              Earn API Docs
+              <ExternalLinkIcon />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Latest Hackathon Recap */}
       <section className="py-16 px-6 bg-bg-card/20 border-y border-border">
         <div className="max-w-[900px] mx-auto grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
@@ -237,53 +284,6 @@ export default function HackathonsPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Live Hackathon */}
-      <section className="py-12 px-6">
-        <div className="max-w-[800px] mx-auto">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-500 mb-8">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse-slow" />
-            Live Now
-          </div>
-
-          <div className="mb-10">
-            <span className="text-sm text-text-secondary block mb-2">LI.FI</span>
-            <h2 className="text-3xl font-bold tracking-tight mb-1">DeFi Mullet Hackathon #1</h2>
-            <p className="text-text-secondary">Apr 8 — Apr 14, 2026</p>
-          </div>
-
-          <div className="flex items-baseline gap-4 py-6 border-t border-b border-border mb-10">
-            <span className="text-sm text-text-secondary">Total Prize Pool</span>
-            <span className="text-2xl font-bold text-text-primary">$5,000 USDC</span>
-          </div>
-
-          {/* Tracks */}
-          <div className="flex flex-col gap-8 mb-10">
-            {tracks.map((track, i) => (
-              <div key={i} className={`pb-8 ${i < tracks.length - 1 ? "border-b border-border" : ""}`}>
-                <div className="flex items-baseline gap-6 mb-2 flex-col sm:flex-row">
-                  <span className="font-mono text-sm font-semibold text-pink">{track.prize}</span>
-                  <h3 className="text-base font-semibold">{track.title}</h3>
-                </div>
-                <p className="text-[15px] text-text-secondary leading-relaxed sm:pl-[calc(3.5rem+1.5rem)] pl-0">
-                  {track.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex gap-4 flex-col sm:flex-row">
-            <Button href="https://forms.gle/RFLGG8RiEKC3AqnQA" external>
-              Register Now
-              <ExternalLinkIcon />
-            </Button>
-            <Button href="https://docs.li.fi/earn/overview" variant="secondary" external>
-              Earn API Docs
-              <ExternalLinkIcon />
-            </Button>
           </div>
         </div>
       </section>
