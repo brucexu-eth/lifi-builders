@@ -14,6 +14,7 @@ export function Nav() {
   }, []);
 
   const isHackathonsPage = mounted && pathname === "/hackathons";
+  const isShowcasePage = mounted && pathname.startsWith("/showcase");
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-bg-default/80 backdrop-blur-xl border-b border-border">
@@ -30,26 +31,28 @@ export function Nav() {
           <span className="text-xs font-semibold text-pink bg-pink/15 px-2 py-1 rounded-md">Builders</span>
         </Link>
         <div className="hidden md:flex gap-8">
-          <Link 
-            href="/#benefits" 
+          <Link
+            href="/#benefits"
             className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
           >
             Benefits
           </Link>
-          <Link 
-            href="/#how-it-works" 
+          <Link
+            href="/#how-it-works"
             className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
           >
             How it Works
           </Link>
-          <Link 
-            href="/#showcase" 
-            className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
+          <Link
+            href="/showcase"
+            className={`text-sm font-medium transition-colors ${
+              isShowcasePage ? "text-pink" : "text-text-secondary hover:text-text-primary"
+            }`}
           >
             Showcase
           </Link>
-          <Link 
-            href="/hackathons" 
+          <Link
+            href="/hackathons"
             className={`text-sm font-medium transition-colors ${
               isHackathonsPage ? "text-pink" : "text-text-secondary hover:text-text-primary"
             }`}
