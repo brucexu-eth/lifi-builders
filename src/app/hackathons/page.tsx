@@ -80,6 +80,49 @@ const latestHackathon = {
 
 const pastHackathons = [
   {
+    badge: "ETHGlobal",
+    title: "HackMoney 2026",
+    meta: "February 2026 · $6,000 LI.FI prize pool · 3 prize tracks",
+    recapUrl: "https://ethglobal.com/events/hackmoney2026/prizes/li-fi",
+    winners: [
+      {
+        place: "Composer · 1st",
+        name: "OmniFlow",
+        link: "https://omniflow-app.up.railway.app/",
+        description:
+          "Payments orchestration protocol — deposit any token from any chain, auto-swap via LI.FI Composer to USDC, pay out to any recipient on any chain.",
+      },
+      {
+        place: "AI × LI.FI · 1st",
+        name: "Router402",
+        link: "https://www.router402.xyz/",
+        description:
+          "OpenRouter-compatible AI gateway with pay-per-use x402 billing and a built-in LI.FI MCP server exposing typed bridge/swap tools to LLM agents.",
+      },
+      {
+        place: "DeFi Integration · 1st",
+        name: "Takeaway",
+        link: "https://takeaway-mbg8.onrender.com/",
+        description:
+          "Send to an ENS subname from any chain; a relayer reads destination preferences and bridges via LI.FI — no bridge UI, no extra signing.",
+      },
+      {
+        place: "DeFi Integration · 2nd",
+        name: "Magnee",
+        link: "https://github.com/guy-do-or-die/magn.ee",
+        description:
+          "Browser extension that intercepts any dapp transaction and lets you pay from a different chain or token using LI.FI — no dapp changes required.",
+      },
+      {
+        place: "DeFi Integration · 3rd",
+        name: "ENSRouter",
+        link: "https://ensrouter.vercel.app/",
+        description:
+          "Pay any ENS name in USDC — ENSRouter bridges cross-chain via LI.FI SDK and delivers in the recipient's preferred token on their preferred chain.",
+      },
+    ],
+  },
+  {
     badge: "LI.FI Builders",
     title: "Agentic Commerce Vibeathon",
     meta: "March 2026 · $5,000 prize pool · Agentic Commerce sprint",
