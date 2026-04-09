@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/button";
-import { GlobeIcon, GitHubIcon, ChevronRight } from "@/components/icons";
+import { GitHubIcon, ChevronRight } from "@/components/icons";
 import { getFeaturedProjects } from "@/data/projects";
 
 const ACCENT_PALETTE = [
@@ -63,15 +63,6 @@ export function Showcase() {
 
               <div className="flex gap-4 mt-6 pt-4 border-t border-border items-center justify-between">
                 <div className="flex gap-4">
-                  {project.website && (
-                    <span
-                      onClick={(e) => { e.preventDefault(); window.open(project.website, "_blank"); }}
-                      className="inline-flex items-center gap-1 text-[13px] font-medium text-text-secondary hover:text-pink transition-colors"
-                    >
-                      <GlobeIcon className="opacity-70 group-hover:opacity-100" />
-                      Website
-                    </span>
-                  )}
                   {project.github && (
                     <span
                       onClick={(e) => { e.preventDefault(); window.open(project.github, "_blank"); }}

@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { projects, HACKATHONS, ALL_TAGS } from "@/data/projects";
-import { GlobeIcon, GitHubIcon, ChevronRight } from "@/components/icons";
+import { GitHubIcon, ChevronRight } from "@/components/icons";
 
 const ACCENT_PALETTE = [
   { bar: "from-fuchsia-500 to-rose-500", bg: "from-fuchsia-500/[0.08]", border: "hover:border-fuchsia-500", shadow: "hover:shadow-fuchsia-500/20" },
@@ -181,15 +181,6 @@ export default function ShowcasePage() {
 
                     <div className="flex gap-4 pt-4 border-t border-border items-center justify-between">
                       <div className="flex gap-4">
-                        {project.website && (
-                          <span
-                            onClick={(e) => { e.preventDefault(); window.open(project.website, "_blank"); }}
-                            className="inline-flex items-center gap-1 text-[13px] font-medium text-text-secondary hover:text-pink transition-colors"
-                          >
-                            <GlobeIcon className="opacity-70" />
-                            Website
-                          </span>
-                        )}
                         {project.github && (
                           <span
                             onClick={(e) => { e.preventDefault(); window.open(project.github, "_blank"); }}

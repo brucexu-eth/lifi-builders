@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { getProjectBySlug, projects } from "@/data/projects";
 import { Button } from "@/components/button";
-import { GlobeIcon, GitHubIcon, ExternalLinkIcon, ChevronRight } from "@/components/icons";
+import { GitHubIcon, ExternalLinkIcon, ChevronRight } from "@/components/icons";
 
 export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -77,13 +77,6 @@ export default async function ShowcaseDetailPage({
 
         {/* Links */}
         <div className="flex flex-wrap gap-3 mt-8">
-          {project.website && (
-            <Button href={project.website} external>
-              <GlobeIcon />
-              Website
-              <ExternalLinkIcon />
-            </Button>
-          )}
           {project.github && (
             <Button href={project.github} variant="secondary" external>
               <GitHubIcon />
