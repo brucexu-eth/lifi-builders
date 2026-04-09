@@ -10,19 +10,29 @@ export const metadata: Metadata = {
 
 const tracks = [
   {
-    prize: "$2,500",
-    title: "Best Use of LI.FI Composer in DeFi",
-    description: "Orchestrate multi-step DeFi workflows like cross-chain vault deposits, leverage strategies, or multi-step LP provisioning. Must support 2+ EVM chains with a working frontend.",
+    prize: "$400",
+    title: "Yield Builder",
+    description: "Build a yield product — earn dashboard, vault aggregator, portfolio manager, stablecoin treasury tool. Integrating Earn into an existing project? That counts too (only the integration is judged).",
   },
   {
-    prize: "$2,000",
-    title: "Best AI x LI.FI Smart App",
-    description: "Build AI-powered agents using LI.FI as the execution layer. Think position management agents, rebalancing bots, or arbitrage strategies with monitoring loops.",
+    prize: "$400",
+    title: "AI × Earn",
+    description: "AI-powered yield tools — agents that auto-allocate across vaults, chatbots for DeFi deposits, LLM-driven risk scoring, natural language vault interaction.",
   },
   {
-    prize: "$1,500",
-    title: "Best LI.FI-Powered DeFi Integration",
-    description: "Production-ready integrations solving real user problems. Tiered prizes ($1,000 / $300 / $200). Focus on reliability and UX.",
+    prize: "$400",
+    title: "DeFi UX Challenge",
+    description: "Make DeFi yield as simple as a savings account. Reimagine how everyday users interact with on-chain earning. Best UX wins.",
+  },
+  {
+    prize: "$400",
+    title: "Developer Tooling",
+    description: "Build tools for other builders — SDKs, CLI tools, Hardhat plugins, testing frameworks, starter templates, or any dev infrastructure around the Earn API.",
+  },
+  {
+    prize: "$400",
+    title: "Open Track",
+    description: "Anything creative using the Earn API that doesn't fit above. Telegram bots, Discord integrations, analytics dashboards, yield-based games — surprise us.",
   },
 ];
 
@@ -240,14 +250,14 @@ export default function HackathonsPage() {
           </div>
 
           <div className="mb-10">
-            <span className="text-sm text-text-secondary block mb-2">ETHGlobal</span>
-            <h2 className="text-3xl font-bold tracking-tight mb-1">HackMoney 2026</h2>
-            <p className="text-text-secondary">Jan 30 — Feb 8, 2026</p>
+            <span className="text-sm text-text-secondary block mb-2">LI.FI</span>
+            <h2 className="text-3xl font-bold tracking-tight mb-1">DeFi Mullet Hackathon #1</h2>
+            <p className="text-text-secondary">Apr 8 — Apr 14, 2026</p>
           </div>
 
           <div className="flex items-baseline gap-4 py-6 border-t border-b border-border mb-10">
-            <span className="text-sm text-text-secondary">LI.FI Prize Pool</span>
-            <span className="text-2xl font-bold text-text-primary">$6,000</span>
+            <span className="text-sm text-text-secondary">Total Prize Pool</span>
+            <span className="text-2xl font-bold text-text-primary">$5,000 USDC</span>
           </div>
 
           {/* Tracks */}
@@ -266,12 +276,13 @@ export default function HackathonsPage() {
           </div>
 
           <div className="flex gap-4 flex-col sm:flex-row">
-            <Button href="https://ethglobal.com/events/hackmoney2026/prizes/li-fi" external>
-              View on ETHGlobal
+            <Button href="https://forms.gle/RFLGG8RiEKC3AqnQA" external>
+              Register Now
               <ExternalLinkIcon />
             </Button>
-            <Button href="https://docs.li.fi" variant="secondary" external>
-              Documentation
+            <Button href="https://docs.li.fi/earn/overview" variant="secondary" external>
+              Earn API Docs
+              <ExternalLinkIcon />
             </Button>
           </div>
         </div>
